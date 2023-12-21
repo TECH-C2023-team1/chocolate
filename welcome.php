@@ -23,6 +23,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <body>
     <h1 class="my-5">Hi,<b><?php echo htmlspecialchars($_SESSION["name"]); ?></b>. Welcome to our site.</h1>
     <p>
+    <a href="location_selection.php" class="btn btn-primary ml-3">ロケーション選択へ</a>
+    </p>
+    
+    <p>
         <a href="logout.php" class="btn btn-danger ml-3">ログアウト</a>
     </p>
 </body>
