@@ -39,15 +39,15 @@ if ($conn->query($sql) === TRUE) {
     <h1>データ入力フォーム</h1>
     
     <form method="post">
-        <label for="option">選択肢:</label>
-        <select name="option" id="option">
+        <label for="option_column">選択肢:</label>
+        <select name="option_column" id="option_column">
             <option value="選択肢1">選択肢1</option>
             <option value="選択肢2">選択肢2</option>
             <!-- 他の選択肢も追加 -->
         </select>
 
-        <label for="data">情報入力:</label>
-        <input type="text" name="data" id="data" required>
+        <label for="data_column">情報入力:</label>
+        <input type="text" name="data_column" id="data_column" required>
 
         <input type="submit" value="送信">
     </form>
