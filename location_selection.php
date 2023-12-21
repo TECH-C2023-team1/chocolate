@@ -6,8 +6,8 @@ $password = "";
 $dbname = "mysql:dbname=location";
 
 // POSTデータの取得
-$selectedOption = $_POST['option'];
-$inputData = $_POST['data'];
+$selectedOption = $_POST['option_column'];
+$inputData = $_POST['data_column'];
 
 // データベースに接続
 $conn = new mysqli($servername, $username, $password, $dbname);
