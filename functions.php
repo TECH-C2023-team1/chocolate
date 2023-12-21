@@ -24,10 +24,10 @@ function validation($datas,$confirm = true)
     $errors = [];
 
     //ユーザー名のチェック
-    if(empty($datas['name'])) {
-        $errors['name'] = 'Please enter username.';
-    }else if(mb_strlen($datas['name']) > 20) {
-        $errors['name'] = 'Please enter up to 20 characters.';
+    if(empty($datas['username'])) {
+        $errors['username'] = 'Please enter username.';
+    }else if(mb_strlen($datas['username']) > 20) {
+        $errors['username'] = 'Please enter up to 20 characters.';
     }
 
     //パスワードのチェック（正規表現）
