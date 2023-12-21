@@ -26,8 +26,6 @@ if ($conn->query($sql) === TRUE) {
     echo "エラー: " . $sql . "<br>" . $conn->error;
 }
 
-// データベースとの接続を閉じる
-$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -55,3 +53,8 @@ $conn->close();
     </form>
 </body>
 </html>
+
+<?php
+// データベースとの接続を閉じる
+$conn->close();
+?>
