@@ -1,9 +1,9 @@
 <?php
 // データベースへの接続情報
-$servername = "データベースのホスト名";
+$servername = "host=localhost";
 $username = "root";
 $password = "";
-$dbname = "データベース名";
+$dbname = "mysql:dbname=location";
 
 // POSTデータの取得
 $selectedOption = $_POST['option'];
@@ -40,7 +40,7 @@ $conn->close();
 <body>
     <h1>データ入力フォーム</h1>
     
-    <form action="process.php" method="post">
+    <form method="post">
         <label for="option">選択肢:</label>
         <select name="option" id="option">
             <option value="選択肢1">選択肢1</option>
