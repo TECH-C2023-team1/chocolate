@@ -33,20 +33,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $errors = validation($datas);
 
     //データベースの中に同一ユーザー名が存在していないか確認
-    if(empty($errors['name'])){
-        $sql = "SELECT id FROM users WHERE name = :name";
+    if(empty($errors['username'])){
+        $sql = "SELECT id FROM users WHERE username = :name";
         $stmt = $pdo->prepare($sql);
-        $stmt->bindValue('name',$datas['name'],PDO::PARAM_INT);
+        $stmt->bindValue('username',$datas['username'],PDO::PARAM_INT);
         $stmt->execute();
         if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            $errors['name'] = 'This username is already taken.';
+            $errors['username'] = 'This username is already taken.';
         }
     }
     //エラーがなかったらDBへの新規登録を実行
     if(empty($errors)){
         $params = [
             'id' =>null,
-            'name'=>$datas['name'],
+            'name'=>$datas['username'],
             'password'=>password_hash($datas['password'], PASSWORD_DEFAULT),
             'created_at'=>null
         ];
