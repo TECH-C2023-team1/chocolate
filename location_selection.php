@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 }
 
 // データをデータベースに挿入
-$sql = "INSERT INTO your_table_name (option_column, data_column) VALUES ('$selectedOption', '$inputData')";
+$sql = "INSERT INTO location (option_column, data_column) VALUES ('$selectedOption', '$inputData')";
 
 if ($conn->query($sql) === TRUE) {
     echo "データが正常に挿入されました";
