@@ -53,8 +53,3 @@ $stmt->close();
     </form>
 </body>
 </html>
-
-<?php
-// データベースとの接続を閉じる
-$conn->close();
-?>
