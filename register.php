@@ -104,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <p>情報の入力を行ってください。</p>
         <form action="<?php echo $_SERVER ['SCRIPT_NAME']; ?>" method="post">
             <div class="form-group">
-                <label>ユーザー名</label>
+                <label>メールアドレス</label>
                 <input type="text" name="name" class="form-control <?php echo (!empty(h($errors['name']))) ? 'is-invalid' : ''; ?>" value="<?php echo h($datas['name']); ?>">
                 <span class="invalid-feedback"><?php echo h($errors['name']); ?></span>
             </div>    

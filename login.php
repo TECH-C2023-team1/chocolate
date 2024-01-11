@@ -88,7 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="wrapper">
         <h2>ログイン</h2>
-        <p>ユーザーネームとパスワードを入力してください</p>
+        <p>メールアドレスとパスワードを入力してください</p>
 
         <?php 
         if(!empty($login_err)){
@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         <form action="<?php echo $_SERVER ['SCRIPT_NAME']; ?>" method="post">
             <div class="form-group">
-                <label>ユーザー名</label>
+                <label>メールアドレス</label>
                 <input type="text" name="name" class="form-control <?php echo (!empty(h($errors['name']))) ? 'is-invalid' : ''; ?>" value="<?php echo h($datas['name']); ?>">
                 <span class="invalid-feedback"><?php echo h($errors['name']); ?></span>
             </div>    

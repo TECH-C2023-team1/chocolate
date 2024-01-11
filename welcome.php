@@ -21,7 +21,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </style>
 </head>
 <body>
-    <h1 class="my-5">Hi,<b><?php echo htmlspecialchars($_SESSION["name"]); ?></b>. Welcome to our site.</h1>
+    <h1 class="my-5">お疲れ様です,<b><?php echo htmlspecialchars($_SESSION["name"]); ?></b>. 以下から選んでください.</h1>
     <p>
         <a href="location_selection.php" class="btn btn-primary ml-3">ロケーション選択へ</a>
     </p>
