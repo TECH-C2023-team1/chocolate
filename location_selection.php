@@ -31,8 +31,6 @@
         <input type="submit" value="送信">
     </form>
 
-    <p>選択した場所:</p>
-
     <a href="welcome.php" class="btn btn-primary">戻る</a>
 
     <!-- Optional JavaScript -->
