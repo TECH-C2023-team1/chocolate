@@ -6,7 +6,7 @@ $password = "";
 $dbname = "mysql:dbname=location";
 
 // データベースへの接続
-$conn = new mysql($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // 接続エラーチェック
 if ($conn->connect_error) {
