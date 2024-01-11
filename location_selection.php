@@ -1,13 +1,51 @@
 <?php
-$selectedOption = ""; // 選択されたオプションを保持する変数
+// データベース設定
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "users";
+
+// データベース接続
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// 接続エラーの確認
+if ($conn->connect_error) {
+    die("接続失敗: " . $conn->connect_error);
+}
 
 // フォームが送信されたかをチェック
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['data_column'])) {
     // 選択されたオプションの値を取得
-    if (isset($_POST['data_column'])) {
-        $selectedOption = $_POST['data_column'];
+    $selectedOption = $conn->real_escape_string($_POST['data_column']);
+
+    // SQL文を準備
+    $sql = "INSERT INTO locations (location) VALUES ('$selectedOption')";
+
+    // SQL文を実行
+    if ($conn->query($sql) === TRUE) {
+        // 最後に挿入されたレコードのIDを取得
+        $last_id = $conn->insert_id;
+        echo "新しいレコードが正常に追加されました。IDは " . $last_id;
+        
+        // 挿入されたデータを取得
+        $sql = "SELECT location FROM locations WHERE id = $last_id";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // データの出力
+            while($row = $result->fetch_assoc()) {
+                echo "選択した場所: " . $row["location"];
+            }
+        } else {
+            echo "結果が0件です";
+        }
+    } else {
+        echo "エラー: " . $sql . "<br>" . $conn->error;
     }
 }
+
+// 接続を閉じる
+$conn->close();
 ?>
 
 <!DOCTYPE html>
