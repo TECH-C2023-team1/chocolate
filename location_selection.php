@@ -15,12 +15,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <title>データ入力フォーム</title>
+    <style>
+        /* コンテンツを中央揃えにするスタイル */
+        .centered {
+            text-align: center;
+        }
+
+        /* リンクを中央揃えにするスタイル */
+        .centered-link {
+            display: block; /* ブロック要素として扱う */
+            text-align: center; /* テキストを中央揃えにする */
+            margin: 0 auto; /* 上下のマージンは0、左右のマージンは自動 */
+        }
+    </style>
 </head>
 <body>
-    <h1>ロケーション選択フォーム</h1>
+    <h1 class="centered">ロケーション選択フォーム</h1>
     
-    <form method="post">
+    <div class="centered-link">
+        <a href="welcome.php" class="btn btn-primary">戻る</a>
+    </div>
+
+    <form method="post" class="centered">
         <label for="data_column">場所選択:</label>
         <select name="data_column" id="data_column" required>
             <option value="">選択してください</option>
@@ -31,12 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="送信">
     </form>
 
-    <?php
-    // 選択されたオプションがあれば表示
-    if (!empty($selectedOption)) {
-        echo "<p>選択した場所: " . htmlspecialchars($selectedOption, ENT_QUOTES, 'UTF-8') . "</p>";
-    }
-    ?>
+    <?php if (!empty($selectedOption)) : ?>
+        <p class="centered">選択した場所: <?php echo htmlspecialchars($selectedOption, ENT_QUOTES, 'UTF-8'); ?></p>
+    <?php endif; ?>
 
     <a href="welcome.php" class="btn btn-primary">戻る</a>
 
