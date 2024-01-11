@@ -1,44 +1,3 @@
-<?php
-// データベースへの接続情報
-/*$servername = "host=localhost";
-$username = "root";
-$password = "";
-$dbname = "mysql:dbname=location";*/
-
-const DB_HOST = 'mysql:dbname=location;host=localhost';
-const DB_USER = 'root';
-const DB_PASSWORD = '';
-
-// データベースへの接続
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD);
-
-// 接続エラーチェック
-if ($conn->connect_error) {
-    die("接続失敗: " . $conn->connect_error);
-}
-// POSTデータの取得
-$selectedOption = $_POST['option_column'];
-
-// プリペアドステートメントの準備
-$stmt = $conn->prepare("INSERT INTO location (option_column) VALUES (?)");
-
-// パラメータのバインド
-$stmt->bind_param("s", $selectedOption);
-
-// クエリの実行
-$stmt->execute();
-
-// 結果メッセージの表示
-if ($stmt->affected_rows === 1) {
-    echo "データが正常に挿入されました";
-} else {
-    echo "エラー: " . $stmt->error;
-}
-
-// ステートメントのクローズ
-$stmt->close();
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -62,5 +21,8 @@ $stmt->close();
 
         <input type="submit" value="送信">
     </form>
+
+    <p>選択した場所: <?php echo $selectedOption; ?></p>
+    
 </body>
 </html>
