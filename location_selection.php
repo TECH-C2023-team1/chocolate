@@ -8,10 +8,9 @@ $dbname = "mysql:dbname=location";*/
 const DB_HOST = 'mysql:dbname=location;host=localhost';
 const DB_USER = 'root';
 const DB_PASSWORD = '';
-const DB_NAME = 'location';
 
 // データベースへの接続
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD);
 
 // 接続エラーチェック
 if ($conn->connect_error) {
