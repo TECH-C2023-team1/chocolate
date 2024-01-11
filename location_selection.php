@@ -10,19 +10,24 @@
     
     <form method="post">
         <label for="option_column">選択肢:</label>
-        <select name="option_column" id="option_column">
-            <option value="選択肢1">選択肢1</option>
-            <option value="選択肢2">選択肢2</option>
-            <!-- 他の選択肢も追加 -->
-        </select>
+            <select name="option_column" id="option_column">
+                <option value="選択肢1">社内</option>
+                <option value="選択肢2">社外</option>
+                <!-- 他の選択肢も追加 -->
+            </select>
 
         <label for="data_column">情報入力:</label>
+            <select name="data_column" id="data_column" required>
+                <option value="選択肢1">選択肢1</option>
+                <option value="選択肢2">選択肢2</option>
+                <!-- 他の選択肢も追加 -->
+            </select>
         <input type="text" name="data_column" id="data_column" required>
 
         <input type="submit" value="送信">
     </form>
 
     <p>選択した場所: <?php echo $selectedOption; ?></p>
-    
+
 </body>
 </html>
