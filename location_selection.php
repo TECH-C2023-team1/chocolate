@@ -84,7 +84,7 @@ $conn->close();
     </form>
 
     <?php if (!empty($selectedOption)) : ?>
-        <p class="centered">送信した場所: <?php echo htmlspecialchars($selectedOption, ENT_QUOTES, 'UTF-8'); ?></p>
+        <p class="centered">した場所: <?php echo htmlspecialchars($selectedOption, ENT_QUOTES, 'UTF-8'); ?></p>
     <?php endif; ?>
 
     <div class="centered-link">
