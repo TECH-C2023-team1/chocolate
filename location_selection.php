@@ -5,7 +5,7 @@ $username = "root";
 $password = "";
 $dbname = "mysql:dbname=location";*/
 
-const DB_HOST = 'mysql:dbname=users;host=localhost';
+const DB_HOST = 'mysql:dbname=location;host=localhost';
 const DB_USER = 'root';
 const DB_PASSWORD = '';
 const DB_NAME = 'location';
