@@ -9,17 +9,10 @@
     <h1>データ入力フォーム</h1>
     
     <form method="post">
-        <label for="option_column">選択肢:</label>
-            <select name="option_column" id="option_column">
-                <option value="選択肢1">社内</option>
-                <option value="選択肢2">社外</option>
-                <!-- 他の選択肢も追加 -->
-            </select>
-
-        <label for="data_column">情報入力:</label>
+        <label for="data_column">場所選択:</label>
             <select name="data_column" id="data_column" required>
-                <option value="選択肢1">選択肢1</option>
-                <option value="選択肢2">選択肢2</option>
+                <option value="選択肢1">社内</option>
+                <option value="選択肢2">自宅</option>
                 <!-- 他の選択肢も追加 -->
             </select>
 
