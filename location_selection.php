@@ -75,7 +75,7 @@ $conn->close();
     <form method="post" class="centered">
         <label for="data_column">場所選択:</label>
         <select name="data_column" id="data_column" required>
-            <option value="">選択してください</option>
+            <option value="">--選択してください--</option>
             <option value="社内">社内</option>
             <option value="自宅">自宅</option>
             <option value="その他(出張先)">その他(出張先)</option>
