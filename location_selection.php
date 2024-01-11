@@ -34,10 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <h1 class="centered">ロケーション選択フォーム</h1>
     
-    <div class="centered-link">
-        <a href="welcome.php" class="btn btn-primary">戻る</a>
-    </div>
-
     <form method="post" class="centered">
         <label for="data_column">場所選択:</label>
         <select name="data_column" id="data_column" required>
@@ -53,7 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="centered">選択した場所: <?php echo htmlspecialchars($selectedOption, ENT_QUOTES, 'UTF-8'); ?></p>
     <?php endif; ?>
 
-    <a href="welcome.php" class="btn btn-primary">戻る</a>
+    <div class="centered-link">
+        <a href="welcome.php" class="btn btn-primary">戻る</a>
+    </div>
 
 </body>
 </html>
