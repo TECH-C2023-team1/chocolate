@@ -11,7 +11,7 @@ const DB_PASSWORD = '';
 const DB_NAME = 'location';
 
 // データベースへの接続
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli(DB_HOST, DB_NAME, DB_PASSWORD, DB_USER);
 
 // 接続エラーチェック
 if ($conn->connect_error) {
