@@ -3,7 +3,10 @@ $selectedOption = ""; // 選択されたオプションを保持する変数
 
 // フォームが送信されたかをチェック
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $selectedOption = $_POST['data_column']; // 選択されたオプションの値を取得
+    // 選択されたオプションの値を取得
+    if (isset($_POST['data_column'])) {
+        $selectedOption = $_POST['data_column'];
+    }
 }
 ?>
 
@@ -30,10 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <?php
     // 選択されたオプションがあれば表示
-    if ($selectedOption) {
-        echo "<p>選択した場所: " . htmlspecialchars($selectedOption) . "</p>";
+    if (!empty($selectedOption)) {
+        echo "<p>選択した場所: " . htmlspecialchars($selectedOption, ENT_QUOTES, 'UTF-8') . "</p>";
     }
     ?>
+
+    <a href="welcome.php" class="btn btn-primary">戻る</a>
 
 </body>
 </html>
