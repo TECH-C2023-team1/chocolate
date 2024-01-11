@@ -16,7 +16,6 @@
             <option value="選択肢1">社内</option>
             <option value="選択肢2">自宅</option>
             <option value="選択肢3">その他(出張先)</option>
-            <!-- 他の選択肢も追加 -->
         </select>
 
     <p id="selectedOption">選択した場所:</p>
