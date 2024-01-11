@@ -1,4 +1,10 @@
 <?php
+// データベースへの接続情報
+$servername = "host=localhost";
+$username = "root";
+$password = "";
+$dbname = "mysql:dbname=location";
+
 // データベースへの接続
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -6,12 +12,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("接続失敗: " . $conn->connect_error);
 }
-// データベースへの接続情報
-$servername = "host=localhost";
-$username = "root";
-$password = "";
-$dbname = "mysql:dbname=location";
-
 // POSTデータの取得
 $selectedOption = $_POST['option_column'];
 
