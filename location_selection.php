@@ -22,7 +22,6 @@
                 <option value="選択肢2">選択肢2</option>
                 <!-- 他の選択肢も追加 -->
             </select>
-        <input type="text" name="data_column" id="data_column" required>
 
         <input type="submit" value="送信">
     </form>
