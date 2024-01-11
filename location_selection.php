@@ -7,25 +7,25 @@ $dbname = "mysql:dbname=location";
 
 // POSTデータの取得
 $selectedOption = $_POST['option_column'];
-$inputData = $_POST['data_column'];
 
-// データベースに接続
-$conn = new mysqli($servername, $username, $password, $dbname);
+// プリペアドステートメントの準備
+$stmt = $conn->prepare("INSERT INTO location (option_column) VALUES (?)");
 
-// 接続確認
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// パラメータのバインド
+$stmt->bind_param("s", $selectedOption);
 
-// データをデータベースに挿入
-$sql = "INSERT INTO location (option_column, data_column) VALUES ('$selectedOption', '$inputData')";
+// クエリの実行
+$stmt->execute();
 
-if ($conn->query($sql) === TRUE) {
+// 結果メッセージの表示
+if ($stmt->affected_rows === 1) {
     echo "データが正常に挿入されました";
 } else {
-    echo "エラー: " . $sql . "<br>" . $conn->error;
+    echo "エラー: " . $stmt->error;
 }
 
+// ステートメントのクローズ
+$stmt->close();
 ?>
 
 <!DOCTYPE html>
