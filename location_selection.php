@@ -11,13 +11,22 @@
     <h1>ロケーション選択フォーム</h1>
     
     <form method="post">
-        <label for="data_column">場所選択:</label>
-            <select name="data_column" id="data_column" required>
-                <option value="選択肢1">社内</option>
-                <option value="選択肢2">自宅</option>
-                <option value="選択肢3">その他(出張先)</option>
-                <!-- 他の選択肢も追加 -->
-            </select>
+    <label for="data_column">場所選択:</label>
+        <select name="data_column" id="data_column" required onchange="displaySelectedOption(this)">
+            <option value="選択肢1">社内</option>
+            <option value="選択肢2">自宅</option>
+            <option value="選択肢3">その他(出張先)</option>
+            <!-- 他の選択肢も追加 -->
+        </select>
+
+    <p id="selectedOption">選択した場所:</p>
+
+    <script>
+    function displaySelectedOption(selectElement) {
+        var selectedOption = selectElement.options[selectElement.selectedIndex].text;
+        document.getElementById('selectedOption').textContent = "選択した場所: " + selectedOption;
+    }
+    </script>
 
         <input type="submit" value="送信">
     </form>
@@ -30,6 +39,5 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 </body>
 </html>
