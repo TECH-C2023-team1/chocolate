@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>データ入力フォーム</h1>
+    <h1>ロケーション選択フォーム</h1>
     
     <form method="post">
         <label for="data_column">場所選択:</label>
@@ -22,10 +22,10 @@
         <input type="submit" value="送信">
     </form>
 
-    <p>選択した場所: <?php echo $selectedOption; ?></p>
+    <p>選択した場所:</p>
 
     <a href="welcome.php" class="btn btn-primary">戻る</a>
-    
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
