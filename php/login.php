@@ -110,4 +110,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 </body>
 </html>
->>>>>>> 6556292a99b98f615f7f72482f1bfb3f266206c1:php/login.php
