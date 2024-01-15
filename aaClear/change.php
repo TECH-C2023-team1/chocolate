@@ -4,7 +4,7 @@ session_start();
 // フォームから送信されたデータを取得
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $area = $_POST["area"];
-    $username = $_SESSION['username']; // 変更した行
+    $username = $_SESSION['username'];
 
     // データベース接続情報
     $host = "localhost";
@@ -18,13 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // SQL インジェクション対策
     $username = mysqli_real_escape_string($conn, $username);
     $area = mysqli_real_escape_string($conn, $area);
+    
     // ユーザーをデータベースに挿入
     $query = "UPDATE users SET area='$area' WHERE username='$username'";
-    
+    $result = $conn->query($query);
+
+
     // データベース切断
     $conn->close();
-
-    
 }
 ?>
 
@@ -37,9 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <h2>Welcome, <?php echo $username; ?>!</h2>
-        <?php echo $_SERVER["PHP_SELF"]; ?>
         <h3>勤務地を変更してください</h3>
-        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+        <!-- <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"> -->
+        <form action="" method="post">
+        <!-- <form action="process_form.php" method="post"> -->
             <label>
                 <input type="radio" name="area" value="1"> 職場<br>
                 <input type="radio" name="area" value="2"> 自宅<br>
