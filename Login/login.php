@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
         // ログイン成功時の処理
         session_start();
         $_SESSION['username'] = $username;
-        header("Location: welcome.php");
+        header("Location: ..\aaClear\welcome.php");
         exit();
     } else {
         echo "ログイン失敗";

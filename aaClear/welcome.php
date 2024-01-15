@@ -4,7 +4,7 @@ session_start();
 // セッションにユーザー名が保存されているか確認
 if (!isset($_SESSION['username'])) {
     // ログインしていない場合はログインページにリダイレクト
-    header("Location: login.php");
+    header("Location: \Login\login.php");
     exit();
 }
 
@@ -22,6 +22,6 @@ $username = $_SESSION['username'];
 <body>
     <h2>Welcome, <?php echo $username; ?>!</h2>
     <p>This is the welcome page. You are logged in.</p>
-    <a href="logout.php">Logout</a>
+    <a href="../Login/logout.php">Logout</a>
 </body>
 </html>
