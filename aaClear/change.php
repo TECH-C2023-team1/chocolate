@@ -1,6 +1,15 @@
 <?php
 session_start();
 
+// セッションにユーザー名が保存されているか確認
+if (!isset($_SESSION['username'])) {
+    // ログインしていない場合はログインページにリダイレクト
+    header("Location: ..\Login\login.php");
+    exit();
+}
+// ログインしているユーザーのユーザー名を表示
+$username = $_SESSION['username'];
+
 // フォームから送信されたデータを取得
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $area = $_POST["area"];
@@ -35,13 +44,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <meta charset="UTF-8">
         <title>勤務地変更ぱげ</title>
         <link rel="stylesheet" href="../CSS/change.css">
+        <link rel="stylesheet" href="../CSS/tab.css">
     </head>
     <body>
-        <h2>Welcome, <?php echo $username; ?>!</h2>
+        <div class="tab-container">
+        <button class="tab" onclick="navigateToPage('change.php')">MAIN ぱげ</button>
+        <button class="tab" onclick="navigateToPage('maneger_page.php')">SYSTEM</button>
+        <button class="tab" onclick="navigateToPage('../Login/login.php')"><?php echo $username; ?></button>
+    </div>
+    <script>
+        function navigateToPage(page) {
+            window.location.href = page;
+        }
+    </script>
         <h3>勤務地を変更してください</h3>
-        <!-- <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"> -->
         <form action="" method="post">
-        <!-- <form action="process_form.php" method="post"> -->
             <label>
                 <input type="radio" name="area" value="1"> 職場<br>
                 <input type="radio" name="area" value="2"> 自宅<br>

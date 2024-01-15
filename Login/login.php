@@ -58,9 +58,19 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Register</title>
     <link rel="stylesheet" href="../CSS/login.css">
-
+    <link rel="stylesheet" href="../CSS/tab.css">
 </head>
 <body>
+    <div class="tab-container">
+        <button class="tab" onclick="navigateToPage('../aaClear/change.php')">MAIN ぱげ</button>
+        <button class="tab" onclick="navigateToPage('../aaClear/maneger_page.php')">SYSTEM</button>
+        <button class="tab" onclick="navigateToPage('../Login/login.php')"><?php echo $username; ?></button>
+    </div>
+    <script>
+        function navigateToPage(page) {
+            window.location.href = page;
+        }
+    </script>
     <h2>Login</h2>
     <form method="post" action="">
         <label for="username">Username:</label>
