@@ -10,14 +10,20 @@ $name = $_SESSION['username'];
 
 // データベース接続
 $conn = new mysqli($host, $username, $password, $database);
-if ($conn->connect_error) {
-    die("データベース接続エラー: " . $conn->connect_error);
-}
 
 // データベースからidとnameを取得
 $query = "SELECT id, username,area FROM users";
 $result = $conn->query($query);
 
+// セッションにユーザー名が保存されているか確認
+if (!isset($_SESSION['username'])) {
+    // ログインしていない場合はログインページにリダイレクト
+    header("Location: ..\Login\login.php");
+    exit();
+}
+
+// ログインしているユーザーのユーザー名を表示
+$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +32,21 @@ $result = $conn->query($query);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User List</title>
+        <link rel="stylesheet" href="../CSS/tab.css">
+
     </head>
+    
 <body>
+    <div class="tab-container">
+        <button class="tab" onclick="navigateToPage('change.php')">MAIN ぱげ</button>
+        <button class="tab" onclick="navigateToPage('maneger_page.php')">SYSTEM</button>
+        <button class="tab" onclick="navigateToPage('../Login/login.php')"><?php echo $username; ?></button>
+    </div>
+    <script>
+        function navigateToPage(page) {
+            window.location.href = page;
+        }
+    </script>
     <h2>User List</h2>
     <table border="1">
         <tr>

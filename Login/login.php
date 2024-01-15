@@ -58,10 +58,51 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Register</title>
     <link rel="stylesheet" href="../CSS/login.css">
-
+    <link rel="stylesheet" href="../CSS/tab.css">
+    <link rel="stylesheet" href="../CSS/modal.css">
 </head>
 <body>
-    <h2>Login</h2>
+    <div class="tab-container">
+        <button class="tab" onclick="navigateToPage('../aaClear/change.php')">MAIN ぱげ</button>
+        <button class="tab" onclick="navigateToPage('../aaClear/maneger_page.php')">SYSTEM</button>
+        <!-- モーダルトリガーボタン -->
+        <button class="tab" onclick="openModal('logoutModal')">ログアウト</button>
+    </div>
+
+    <!-- モーダル本体 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>ログアウトしますか？</p>
+            <button class="tabb" onclick="navigateToPage('../Login/logout.php')">はい</button>
+            <button class="tabb" onclick="closeModal()">いいえ</button>
+        </div>
+    </div>
+
+    <script>
+        function navigateToPage(page) {
+            window.location.href = page;
+        }
+
+        // モーダルを開く関数
+        function openModal() {
+            var modal = document.getElementById('myModal');
+            modal.classList.add('show');
+        }
+
+        // モーダルを閉じる関数
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.classList.remove('show');
+        }
+
+        // バックドロップをクリックしてモーダルを閉じる
+        window.onclick = function(event) {
+            var modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                modal.classList.remove('show');
+            }
+        };
+    </script>    <h2>Login</h2>
     <form method="post" action="">
         <label for="username">Username:</label>
         <input type="text" name="username" required>
@@ -82,5 +123,6 @@ $conn->close();
         <br>
         <input type="submit" name="register" value="Register">
     </form>
+
 </body>
 </html>
