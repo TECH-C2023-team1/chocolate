@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 // データベースからidとnameを取得
-$query = "SELECT id, username FROM users";
+$query = "SELECT id, username,area FROM users";
 $result = $conn->query($query);
 
 ?>
@@ -33,13 +33,28 @@ $result = $conn->query($query);
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>勤務地</th>
         </tr>
         <?php
         // データベースから取得した結果を表示
         while ($row = $result->fetch_assoc()) {
+                // 0: 未定, 1: 会社, 2: 自宅, 3: その他 と仮定
+                $status = $row['area'];
+                if ($status == 0) {
+                    $label = "未定";
+                } elseif ($status == 1) {
+                    $label = "会社";
+                } elseif ($status == 2) {
+                    $label = "自宅";
+                } elseif ($status == 3) {
+                    $label = "その他";
+                } else {
+                    $label = "未知のステータス";
+                }
             echo "<tr>";
             echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['username'] . "</td>";
+            echo "<td>" . $label . "</td>";
             echo "</tr>";
         }
         ?>
