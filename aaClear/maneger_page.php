@@ -1,4 +1,5 @@
 <?php
+session_start();
 // データベース接続情報
 $host = "localhost";
 $username = "root";
@@ -14,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 // データベースからidとnameを取得
-$query = "SELECT id, username FROM username";
+$query = "SELECT id, username FROM users";
 $result = $conn->query($query);
 
 ?>
@@ -26,6 +27,27 @@ $result = $conn->query($query);
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User List</title>
     </head>
-    <body>
-    </body>
+<body>
+    <h2>User List</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        <?php
+        // データベースから取得した結果を表示
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['username'] . "</td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
+    <?php
+    // データベース切断
+    $conn->close();
+    ?>
+
+</body>
 </html>
