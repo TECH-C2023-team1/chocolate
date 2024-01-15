@@ -1,4 +1,9 @@
-style{ 
+body{ 
     font: 14px sans-serif;
-    text-align: center; 
+}
+p{
+    color: green;
+}
+a{
+
 }
