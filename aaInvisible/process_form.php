@@ -1,8 +1,8 @@
 <?php
 // データベースへの接続情報
 $servername = "localhost";
-$username = "name";
-$password = "password";
+$username = "root";
+$password = "";
 $dbname = "employee";
 // ↑ここ間違ってるかも！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // データの挿入
-    $sql = "INSERT INTO employee (id, name, password, email, area) VALUES (NULL, 'your_emp_value', 'your_password_value', '$email', '$area_name')";
+    $sql = "INSERT INTO employee (id, name, email, password, area) VALUES (NULL, 'your_emp_value', '$email', 'your_password_value', '$area_name')";
 
     if ($conn->query($sql) === TRUE) {
         echo "データが正常に挿入されました。";
