@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>勤務地変更ぱげ</title>
+        <link rel="stylesheet" href="../CSS/change.css">
 </head>
 <body>
     <h3>勤務地を変更してください</h3>
