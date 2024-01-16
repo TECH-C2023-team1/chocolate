@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
         // ログイン成功時の処理
         session_start();
         $_SESSION['username'] = $username;
-        header("Location: ..\aaClear\welcome.php");
+        header("Location: ..\aaClear\change.php");
         exit();
     } else {
         echo "ログイン失敗";
@@ -102,7 +102,15 @@ $conn->close();
                 modal.classList.remove('show');
             }
         };
-    </script>    <h2>Login</h2>
+    </script>
+    <?php
+    // Check if the user is logged in
+    session_start();
+    if (isset($_SESSION['username'])) {
+        echo '<p>ログインしています</p>';
+    }
+    ?>
+        <h2>Login</h2>
     <form method="post" action="">
         <label for="username">Username:</label>
         <input type="text" name="username" required>
