@@ -95,18 +95,16 @@ $conn->close();
     }
     ?>
         <h2>ログイン</h2>
-    <form method="post" action="">
-        <label for="username">ユーザーネーム:</label>
-        <input type="text" name="username" required>
-        <br>
-        <label for="password">パスワード:</label>
-        <input type="password" name="password" required>
-        <br>
-        <input type="submit" name="login" value="Login">
-    </form>
+            <form method="post" action="">
+                <label for="username">ユーザーネーム:</label>
+                <input type="text" name="username" required>
+                <br>
+                <label for="password">パスワード:</label>
+                <input type="password" name="password" required>
+                <br>
+                <input type="submit" name="login" value="ログイン">
+            </form>
 
-        <button onclick="navigateToPage('../Login/register.php')">新規登録</button>
-
-
+            <button onclick="navigateToPage('../Login/register.php')">新規登録</button>
 </body>
 </html>
