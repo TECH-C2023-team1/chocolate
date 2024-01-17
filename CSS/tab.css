@@ -1,0 +1,11 @@
+.tab-container {
+    display: flex;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #eee;
+    cursor: pointer;
+}

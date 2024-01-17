@@ -1,8 +1,7 @@
 body{
-    font: 14px sans-serif;
+    font: 30px;
+    margin: 50px;
 }
-.wrapper{
-    width: 400px;
-    padding: 20px;
-    margin: 0 auto;
+h2{
+    color:blue;
 }
