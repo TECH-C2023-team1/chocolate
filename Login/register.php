@@ -88,10 +88,9 @@ $conn->close();
         <input type="password" name="newPassword" required>
         <br>
         <input type="submit" name="register" value="Register">
-    </form>
+    </form> 
 
         <button onclick="navigateToPage('../Login/login.php')">戻る</button>
 
 </body>
 </html>
-
