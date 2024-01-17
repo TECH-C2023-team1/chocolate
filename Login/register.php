@@ -32,6 +32,21 @@ if (isset($_POST['login'])) {
     }
 }
 
+// 新規追加処理
+if (isset($_POST['register'])) {
+    $newUsername = $_POST['newUsername'];
+    $newPassword = $_POST['newPassword'];
+
+    // パスワードのハッシュ化などのセキュリティ対策が必要です
+
+    $insertQuery = "INSERT INTO users (username, password) VALUES ('$newUsername', '$newPassword')";
+    if ($conn->query($insertQuery) === TRUE) {
+        echo "新規追加成功、ログイン画面で、ログインを行ってください";
+    } else {
+        echo "新規追加失敗: " . $conn->error;
+    }
+}
+
 // データベース切断
 $conn->close();
 ?>
@@ -50,42 +65,11 @@ $conn->close();
     <div class="tab-container">
         <button class="tab" onclick="navigateToPage('../aaClear/change.php')">MAIN ぱげ</button>
         <button class="tab" onclick="navigateToPage('../aaClear/maneger_page.php')">SYSTEM</button>
-        <!-- モーダルトリガーボタン -->
-        <button class="tab" onclick="openModal('logoutModal')">ログアウト</button>
-    </div>
-
-    <!-- モーダル本体 -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <p>ログアウトしますか？</p>
-            <button class="tabb" onclick="navigateToPage('../Login/logout.php')">はい</button>
-            <button class="tabb" onclick="closeModal()">いいえ</button>
-        </div>
     </div>
 
     <script>
         function navigateToPage(page) {
             window.location.href = page;
-        }
-
-        // モーダルを開く関数
-        function openModal() {
-            var modal = document.getElementById('myModal');
-            modal.classList.add('show');
-        }
-
-        // モーダルを閉じる関数
-        function closeModal() {
-            var modal = document.getElementById('myModal');
-            modal.classList.remove('show');
-        }
-
-        // バックドロップをクリックしてモーダルを閉じる
-        window.onclick = function(event) {
-            var modal = document.getElementById('myModal');
-            if (event.target === modal) {
-                modal.classList.remove('show');
-            }
         };
     </script>
     <?php
@@ -95,19 +79,20 @@ $conn->close();
         echo '<p>ログインしています</p>';
     }
     ?>
-        <h2>Login</h2>
+
+    <h2>Register</h2>
     <form method="post" action="">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required>
+        <label for="newUsername">New Username:</label>
+        <input type="text" name="newUsername" required>
         <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required>
+        <label for="newPassword">New Password:</label>
+        <input type="password" name="newPassword" required>
         <br>
-        <input type="submit" name="login" value="Login">
+        <input type="submit" name="register" value="Register">
     </form>
 
-        <button onclick="navigateToPage('../Login/register.php')">新規登録</button>
-
+        <button onclick="navigateToPage('../Login/login.php')">戻る</button>
 
 </body>
 </html>
+
