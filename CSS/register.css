@@ -6,8 +6,9 @@ form{
 body {
     font-family: Arial;
     background-color: #f4f4f4;
-    margin: 30px;
+    margin: 30;
     padding: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -33,7 +34,6 @@ label {
 button {
     background-color: #3498db;
     color: #fff;
-    margin-top: 10px;
     padding: 10px;
     border: none;
     border-radius: 4px;
