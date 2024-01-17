@@ -84,11 +84,14 @@ $conn->close();
         <label for="newUsername">New Username:</label>
         <input type="text" name="newUsername" required>
         <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
         <label for="newPassword">New Password:</label>
         <input type="password" name="newPassword" required>
         <br>
-        <input type="submit" name="register" value="Register">
-    </form>
+        <button type="submit" name="register" value="Register">Register</button>
+    </form> 
 
         <button onclick="navigateToPage('../Login/login.php')">戻る</button>
 
