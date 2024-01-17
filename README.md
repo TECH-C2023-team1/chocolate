@@ -21,4 +21,8 @@ TABLE : users
 - ID
 - username
 - password
+<<<<<<< HEAD
 - area（勤務地）
+=======
+- area（勤務地）
+>>>>>>> 357b04d0779394d47377971dc7364a925d520cfe
