@@ -1,13 +1,15 @@
-リポジトリ名は 
-# chocolate
+aaClear（ページ）
+- change.php（勤務地を変更するページ）
+- maneger_page.php（従業員の一覧と勤務地が見れるページ）
 
-### やることリスト
- - アプリの大枠を作る
+CSS
+- change.css
+- login.css（モーダルもこの中に入れてる）
+- maneger_page.css
+- register.css
+- tab.css（前頁の上のタブのcss）
 
-### 従業員側
- - 画面の装飾
- - データを送る
-
-### 管理者側
- - データの回収
- - グラフへの可視化
+Login
+- login.php
+- logout.php（ログアウトをするphp、ページは存在しない）
+- register.php（従業員の新規登録ページ）
