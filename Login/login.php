@@ -94,12 +94,12 @@ $conn->close();
         echo '<p>ログインしています</p>';
     }
     ?>
-        <h2>Login</h2>
+        <h2>ログイン</h2>
     <form method="post" action="">
-        <label for="username">Username:</label>
+        <label for="username">ユーザーネーム:</label>
         <input type="text" name="username" required>
         <br>
-        <label for="password">Password:</label>
+        <label for="password">パスワード:</label>
         <input type="password" name="password" required>
         <br>
         <input type="submit" name="login" value="Login">
