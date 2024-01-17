@@ -35,11 +35,13 @@ if (isset($_POST['login'])) {
 // 新規追加処理
 if (isset($_POST['register'])) {
     $newUsername = $_POST['newUsername'];
+    $name = $_POST['name'];
     $newPassword = $_POST['newPassword'];
+
 
     // パスワードのハッシュ化などのセキュリティ対策が必要です
 
-    $insertQuery = "INSERT INTO users (username, password) VALUES ('$newUsername', '$newPassword')";
+    $insertQuery = "INSERT INTO users (username, password,name) VALUES ('$newUsername', '$newPassword','$name')";
     if ($conn->query($insertQuery) === TRUE) {
         echo "新規追加成功、ログイン画面で、ログインを行ってください";
     } else {
