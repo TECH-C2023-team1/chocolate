@@ -6,13 +6,14 @@ $username = "root";
 $password = "";
 $database = "users";
 
+// セッションからユーザー名を取得
 $name = $_SESSION['username'];
 
 // データベース接続
 $conn = new mysqli($host, $username, $password, $database);
 
 // データベースからidとnameを取得
-$query = "SELECT id, username,area FROM users";
+$query = "SELECT id, username, area, name FROM users";
 $result = $conn->query($query);
 
 // セッションにユーザー名が保存されているか確認
@@ -58,22 +59,22 @@ $username = $_SESSION['username'];
         <?php
         // データベースから取得した結果を表示
         while ($row = $result->fetch_assoc()) {
-                // 0: 未定, 1: 会社, 2: 自宅, 3: その他 と仮定
-                $status = $row['area'];
-                if ($status == 0) {
-                    $label = "未定";
-                } elseif ($status == 1) {
-                    $label = "会社";
-                } elseif ($status == 2) {
-                    $label = "自宅";
-                } elseif ($status == 3) {
-                    $label = "その他";
-                } else {
-                    $label = "未知のステータス";
-                }
+            // 0: 未定, 1: 会社, 2: 自宅, 3: その他 と仮定
+            $status = $row['area'];
+            if ($status == 0) {
+                $label = "未定";
+            } elseif ($status == 1) {
+                $label = "会社";
+            } elseif ($status == 2) {
+                $label = "自宅";
+            } elseif ($status == 3) {
+                $label = "その他";
+            } else {
+                $label = "未知のステータス";
+            }
             echo "<tr>";
             echo "<td>" . $row['id'] . "</td>";
-            echo "<td>" . $row['username'] . "</td>";
+            echo "<td>" . $row['name'] . "</td>"; // ここを $row['name'] に変更
             echo "<td>" . $label . "</td>";
             echo "</tr>";
         }
