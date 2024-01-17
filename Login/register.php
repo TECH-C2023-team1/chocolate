@@ -84,6 +84,12 @@ $conn->close();
         <label for="newUsername">New Username:</label>
         <input type="text" id="username" name="newUsername" required>
         <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="contact">Contact Number:</label>
+        <input type="number" id="contact" name="contact" required>
+        <br>
         <label for="newPassword">New Password:</label>
         <input type="password" id="password" name="newPassword" required>
         <br>
