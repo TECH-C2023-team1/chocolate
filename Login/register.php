@@ -87,14 +87,8 @@ $conn->close();
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <br>
-        <label for="contact">Contact Number:</label>
-        <input type="number" id="contact" name="contact" required>
-        <br>
         <label for="newPassword">New Password:</label>
         <input type="password" id="password" name="newPassword" required>
-        <br>
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
         <br>
         <button type="submit" name="register" value="Register">Register</button>
     </form>
