@@ -42,3 +42,10 @@ button {
 button:hover {
     background-color: #2980b9;
 }
+.ppp{
+    color: #aaa;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
