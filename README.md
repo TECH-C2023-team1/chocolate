@@ -13,3 +13,12 @@ Login
 - login.php
 - logout.php（ログアウトをするphp、ページは存在しない）
 - register.php（従業員の新規登録ページ）
+
+-------------------------------------------------------------------
+
+DB : users
+TABLE : users
+- ID
+- username
+- password
+- area（勤務地）
