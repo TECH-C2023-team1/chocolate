@@ -41,10 +41,9 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Register</title>
+    <title>ログイン</title>
     <link rel="stylesheet" href="../CSS/login.css">
     <link rel="stylesheet" href="../CSS/tab.css">
-    <link rel="stylesheet" href="../CSS/modal.css">
 </head>
 <body>
     <div class="tab-container">
