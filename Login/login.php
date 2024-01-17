@@ -47,8 +47,8 @@ $conn->close();
 </head>
 <body>
     <div class="tab-container">
-        <button class="tab" onclick="navigateToPage('../aaClear/change.php')">MAIN ぱげ</button>
-        <button class="tab" onclick="navigateToPage('../aaClear/maneger_page.php')">SYSTEM</button>
+        <button class="tab" onclick="navigateToPage('../aaClear/change.php')">勤務地変更</button>
+        <button class="tab" onclick="navigateToPage('../aaClear/maneger_page.php')">勤務地確認</button>
         <!-- モーダルトリガーボタン -->
         <button class="tab" onclick="openModal('logoutModal')">ログアウト</button>
     </div>
