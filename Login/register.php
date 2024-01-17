@@ -90,9 +90,6 @@ $conn->close();
         <label for="newPassword">New Password:</label>
         <input type="password" id="password" name="newPassword" required>
         <br>
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
-        <br>
         <input type="submit" name="register" value="Register">
     </form> 
 

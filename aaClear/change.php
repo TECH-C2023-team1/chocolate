@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             window.location.href = page;
         }
     </script>
-        <h3>勤務地を変更してください</h3>
+        <h1>勤務地を変更してください</h1>
         <form action="" method="post">
             <label>
                 <input type="radio" name="area" value="1"> 職場<br>
