@@ -82,12 +82,15 @@ $conn->close();
     <h2>Register</h2>
     <form method="post" action="">
         <label for="newUsername">New Username:</label>
-        <input type="text" name="newUsername" required>
+        <input type="text" id="username" name="newUsername" required>
         <br>
         <label for="newPassword">New Password:</label>
-        <input type="password" name="newPassword" required>
+        <input type="password" id="password" name="newPassword" required>
         <br>
-        <input type="submit" name="register" value="Register">
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <br>
+        <button type="submit" name="register" value="Register">Register</button>
     </form>
 
         <button onclick="navigateToPage('../Login/login.php')">戻る</button>
