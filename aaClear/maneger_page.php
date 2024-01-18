@@ -40,8 +40,8 @@ $username = $_SESSION['username'];
     
 <body>
     <div class="tab-container">
-        <button class="tab" onclick="navigateToPage('change.php')">MAIN ぱげ</button>
-        <button class="tab" onclick="navigateToPage('maneger_page.php')">SYSTEM</button>
+        <button class="tab" onclick="navigateToPage('change.php')">勤務地変更</button>
+        <button class="tab" onclick="navigateToPage('maneger_page.php')">一覧確認</button>
         <button class="tab" onclick="navigateToPage('../Login/login.php')"><?php echo $username; ?></button>
     </div>
     <script>
@@ -49,7 +49,7 @@ $username = $_SESSION['username'];
             window.location.href = page;
         }
     </script>
-    <h2>User List</h2>
+    <h2>従業員一覧</h2>
     <table border="1">
         <tr>
             <th>ID</th>

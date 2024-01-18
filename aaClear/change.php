@@ -48,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <div class="tab-container">
-        <button class="tab" onclick="navigateToPage('change.php')">MAIN ぱげ</button>
-        <button class="tab" onclick="navigateToPage('maneger_page.php')">SYSTEM</button>
+        <button class="tab" onclick="navigateToPage('change.php')">勤務地変更</button>
+        <button class="tab" onclick="navigateToPage('maneger_page.php')">一覧確認</button>
         <button class="tab" onclick="navigateToPage('../Login/login.php')"><?php echo $username; ?></button>
     </div>
     <script>
