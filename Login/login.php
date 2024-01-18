@@ -41,15 +41,14 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Register</title>
+    <title>ログイン</title>
     <link rel="stylesheet" href="../CSS/login.css">
     <link rel="stylesheet" href="../CSS/tab.css">
-    <link rel="stylesheet" href="../CSS/modal.css">
 </head>
 <body>
     <div class="tab-container">
-        <button class="tab" onclick="navigateToPage('../aaClear/change.php')">MAIN ぱげ</button>
-        <button class="tab" onclick="navigateToPage('../aaClear/maneger_page.php')">SYSTEM</button>
+        <button class="tab" onclick="navigateToPage('../aaClear/change.php')">勤務地変更</button>
+        <button class="tab" onclick="navigateToPage('../aaClear/maneger_page.php')">一覧確認</button>
         <!-- モーダルトリガーボタン -->
         <button class="tab" onclick="openModal('logoutModal')">ログアウト</button>
     </div>
@@ -95,19 +94,17 @@ $conn->close();
         echo '<p>ログインしています</p>';
     }
     ?>
-        <h2>Login</h2>
-    <form method="post" action="">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required>
-        <br>
-        <input type="submit" name="login" value="Login">
-    </form>
+        <h2>ログイン</h2>
+            <form method="post" action="">
+                <label for="username">メアド:</label>
+                <input type="text" name="username" required>
+                <br>
+                <label for="password">パスワード:</label>
+                <input type="password" name="password" required>
+                <br>
+                <input type="submit" name="login" value="ログイン">
+            </form>
 
-        <button onclick="navigateToPage('../Login/register.php')">新規登録</button>
-
-
+            <button onclick="navigateToPage('../Login/register.php')">新規登録</button>
 </body>
 </html>

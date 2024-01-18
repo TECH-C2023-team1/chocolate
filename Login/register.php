@@ -61,6 +61,8 @@ $conn->close();
     <title>Login and Register</title>
     <link rel="stylesheet" href="../CSS/register.css">
     <link rel="stylesheet" href="../CSS/tab.css">
+    <link rel="stylesheet" href="../CSS/modal.css">
+
 </head>
 <body>
     <div class="tab-container">
@@ -83,13 +85,13 @@ $conn->close();
 
     <h2>Register</h2>
     <form method="post" action="">
-        <label for="newUsername">New Username:</label>
+        <label for="newUsername">メールアドレス:</label>
         <input type="text" id="username" name="newUsername" required>
         <br>
-        <label for="name">Name:</label>
+        <label for="name">名前:</label>
         <input type="text" id="name" name="name" required>
         <br>
-        <label for="newPassword">New Password:</label>
+        <label for="newPassword">パスワード:</label>
         <input type="password" id="password" name="newPassword" required>
         <br>
         <input type="submit" name="register" value="Register">
